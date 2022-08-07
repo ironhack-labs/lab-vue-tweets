@@ -4,16 +4,18 @@
       <span className="name">{{ user.name }}</span>
       <span className="handle">{{ user.handle }}</span>
     </span>
-    <span className="timestamp">{{ timestamp }}</span>
+    <Timestamp :timestamp="timestamp" />
   </div>
 </template>
 
 <script>
+import Timestamp from "./Timestamp.vue";
 export default {
   props: {
     user: Object,
     timestamp: String,
   },
+  components: { Timestamp },
 };
 </script>
 
