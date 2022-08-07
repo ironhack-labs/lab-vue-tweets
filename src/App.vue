@@ -1,6 +1,10 @@
 <template>
   <div class="app">
-    <Tweet :tweet="tweets[0]" />
+    <Tweet
+      v-for="tweet in tweets"
+      :tweet="tweet"
+      :key="hashCode(JSON.stringify(tweet))"
+    />
   </div>
 </template>
 
@@ -43,6 +47,17 @@ export default {
     ],
   }),
   components: { Tweet },
+  methods: {
+    hashCode: (string) => {
+      var hash = 0;
+      for (var i = 0; i < string.length; i++) {
+        var code = string.charCodeAt(i);
+        hash = (hash << 5) - hash + code;
+        hash = hash & hash; // Convert to 32bit integer
+      }
+      return hash;
+    },
+  },
 };
 </script>
 
