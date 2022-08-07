@@ -5,6 +5,7 @@
       :tweet="tweet"
       :key="hashCode(JSON.stringify(tweet))"
       @like="toggleLike(tweet)"
+      @retweet="toggleRetweet(tweet)"
     />
   </div>
 </template>
@@ -25,6 +26,7 @@ export default {
         message:
           "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
         like: false,
+        retweeted: false,
       },
       {
         user: {
@@ -36,6 +38,7 @@ export default {
         message:
           "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
         like: false,
+        retweeted: false,
       },
       {
         user: {
@@ -47,14 +50,17 @@ export default {
         message:
           "here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
         like: false,
+        retweeted: false,
       },
     ],
   }),
   components: { Tweet },
   methods: {
     toggleLike: (tweet) => {
-      console.log(tweet.like);
       tweet.like = !tweet.like;
+    },
+    toggleRetweet: (tweet) => {
+      tweet.retweeted = !tweet.retweeted;
     },
     hashCode: (string) => {
       var hash = 0;
@@ -103,6 +109,10 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.main-blue {
+  color: #61dafb;
 }
 
 .app-link {

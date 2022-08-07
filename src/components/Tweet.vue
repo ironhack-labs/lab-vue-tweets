@@ -7,7 +7,12 @@
         <Timestamp :timestamp="tweet.timestamp" />
       </div>
       <Message :message="tweet.message" />
-      <Actions :like="tweet.like" @like="$emit('like')" />
+      <Actions
+        :like="tweet.like"
+        :retweeted="tweet.retweeted"
+        @like="$emit('like')"
+        @retweet="$emit('retweet')"
+      />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
