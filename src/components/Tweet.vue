@@ -2,14 +2,7 @@
   <div className="tweet">
     <ProfileImage :image="tweet.user.image" />
     <div className="body">
-      <div className="top">
-        <span className="user">
-          <span className="name">{{ tweet.user.name }}</span>
-          <span className="handle">{{ tweet.user.handle }}</span>
-        </span>
-
-        <span className="timestamp">{{ tweet.timestamp }}</span>
-      </div>
+      <User :user="tweet.user" :timestamp="tweet.timestamp" />
 
       <p className="message">{{ tweet.message }}</p>
 
@@ -28,11 +21,12 @@
 
 <script>
 import ProfileImage from "./ProfileImage.vue";
+import User from "./User.vue";
 export default {
   props: {
     tweet: Object,
   },
-  components: { ProfileImage },
+  components: { ProfileImage, User },
 };
 </script>
 
