@@ -2,16 +2,12 @@
   <div className="tweet">
     <ProfileImage :image="tweet.user.image" />
     <div className="body">
-      <User :user="tweet.user" :timestamp="tweet.timestamp" />
-      <Message :message="tweet.message" />
-
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
+      <div className="top">
+        <User :user="tweet.user" :timestamp="tweet.timestamp" />
+        <Timestamp :timestamp="tweet.timestamp" />
       </div>
+      <Message :message="tweet.message" />
+      <Actions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
@@ -22,11 +18,13 @@
 import ProfileImage from "./ProfileImage.vue";
 import User from "./User.vue";
 import Message from "./Message.vue";
+import Actions from "./Actions.vue";
+import Timestamp from "./Timestamp.vue";
 export default {
   props: {
     tweet: Object,
   },
-  components: { ProfileImage, User, Message },
+  components: { ProfileImage, User, Message, Actions, Timestamp },
 };
 </script>
 
