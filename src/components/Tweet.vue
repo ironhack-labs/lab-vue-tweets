@@ -3,8 +3,7 @@
     <ProfileImage :image="tweet.user.image" />
     <div className="body">
       <User :user="tweet.user" :timestamp="tweet.timestamp" />
-
-      <p className="message">{{ tweet.message }}</p>
+      <Message :message="tweet.message" />
 
       <div className="actions">
         <!-- Font Awesome icons -->
@@ -22,11 +21,12 @@
 <script>
 import ProfileImage from "./ProfileImage.vue";
 import User from "./User.vue";
+import Message from "./Message.vue";
 export default {
   props: {
     tweet: Object,
   },
-  components: { ProfileImage, User },
+  components: { ProfileImage, User, Message },
 };
 </script>
 
