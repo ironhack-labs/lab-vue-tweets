@@ -5,7 +5,7 @@
 <script>
 export default {
   props: {
-    image: URL,
+    image: String,
   },
 };
 </script>
