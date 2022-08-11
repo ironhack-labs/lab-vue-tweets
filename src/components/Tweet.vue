@@ -1,38 +1,44 @@
 <template>
   <div className="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      className="profile"
-      alt="profile"
-    />
+    <TweetImage :src="user.image" />
 
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">Ironhack</span>
-          <span className="handle">@ironhack</span>
-        </span>
-
-        <span className="timestamp">Nov 30, 2020</span>
+        <TweetUser :user="user" />
+        <TweetTimestamp :timestamp="timestamp" />
       </div>
 
-      <p className="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
-      </p>
-
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <TweetMessage :message="message" />
+      <TweetActions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
+
+<script>
+import TweetImage from "./TweetImage.vue";
+import TweetMessage from "./TweetMessage.vue";
+import TweetUser from "./TweetUser.vue";
+import TweetActions from "./TweetActions.vue";
+import TweetTimestamp from "./TweetTimestamp.vue";
+
+export default {
+  name: "Tweet",
+  components: {
+    TweetImage,
+    TweetUser,
+    TweetMessage,
+    TweetActions,
+    TweetTimestamp,
+  },
+  props: {
+    user: Object,
+    timestamp: String,
+    message: String,
+  },
+};
+</script>
 
 <style scoped>
 a {
