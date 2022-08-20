@@ -1,24 +1,17 @@
 <template>
   <div className="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      className="profile"
-      alt="profile"
-    />
-
+    <ProfileImage :image="user.image"/>
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">Ironhack</span>
-          <span className="handle">@ironhack</span>
+          <span className="name">{{ user.name }}</span>
+          <span className="handle">{{ user.handle }}</span>
         </span>
 
-        <span className="timestamp">Nov 30, 2020</span>
+        <span className="timestamp">{{ timestamp }}</span>
       </div>
 
-      <p className="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
+      <p className="message">{{ message }}
       </p>
 
       <div className="actions">
@@ -33,6 +26,26 @@
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
+<script>
+import ProfileImage from './ProfileImage.vue'
+
+export default {
+  props: {
+    user: {
+      name: String,
+      image: String,
+      handle: String,
+    },
+    timestamp: String,
+    message: String,
+    image: String,
+  },
+  components: {
+    ProfileImage,
+  },
+}
+</script>
+
 
 <style scoped>
 a {
