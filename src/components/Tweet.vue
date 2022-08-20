@@ -10,9 +10,8 @@
           <Timestamp :timestamp="timestamp" />
         </span>
       </div>
-
       <p className="message">
-        {{ message }}
+        <Message :message="message" />
       </p>
 
       <div className="actions">
@@ -31,6 +30,7 @@
 import ProfileImage from "./ProfileImage.vue";
 import User from "./User.vue";
 import Timestamp from "./Timestamp.vue";
+import Message from "./Message.vue";
 export default {
   props: {
     user: {
@@ -41,7 +41,7 @@ export default {
     message: String,
     image: String,
   },
-  components: { ProfileImage, User, Timestamp },
+  components: { ProfileImage, User, Timestamp, Message, Message },
 };
 </script>
 
