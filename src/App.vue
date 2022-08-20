@@ -40,7 +40,7 @@ export default {
             },
         ]
     }),
-    components: { Tweet }
+    components: { Tweet } // iteration one
 }
 </script>
 
