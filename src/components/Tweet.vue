@@ -8,9 +8,7 @@
         <Timestamp :timestamp="timestamp"/>
       </div>
 
-      <p className="message">
-        {{message}}
-      </p>
+      <Message :message="message"/>
 
       <div className="actions">
         <!-- Font Awesome icons -->
@@ -29,6 +27,7 @@
 import ProfileImage from './ProfileImage.vue'
 import User from './User.vue'
 import Timestamp from "./Timestamp.vue";
+import Message from "./Message.vue";
 
 export default {
   name: 'Tweet',
@@ -36,6 +35,7 @@ export default {
     ProfileImage,
     User,
     Timestamp,
+    Message,
   },
   props: {
     user: {
