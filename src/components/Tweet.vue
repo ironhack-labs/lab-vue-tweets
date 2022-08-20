@@ -1,38 +1,42 @@
 <template>
   <div className="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      className="profile"
-      alt="profile"
-    />
-
+    <ProfileImage :image="image" />
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">Ironhack</span>
-          <span className="handle">@ironhack</span>
+          <User :user="user" />
         </span>
-
-        <span className="timestamp">Nov 30, 2020</span>
+        <span className="timestamp">
+          <Timestamp :timestamp="timestamp" />
+        </span>
       </div>
-
       <p className="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
+        <Message :message="message" />
       </p>
-
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <Actions />
     </div>
-
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
+<script>
+import ProfileImage from "./ProfileImage.vue";
+import User from "./User.vue";
+import Timestamp from "./Timestamp.vue";
+import Message from "./Message.vue";
+import Actions from "./Actions.vue";
+export default {
+  props: {
+    user: {
+      name: String,
+      handle: String,
+    },
+    timestamp: String,
+    message: String,
+    image: String,
+  },
+  components: { ProfileImage, User, Timestamp, Message, Message, Actions },
+};
+</script>
 
 <style scoped>
 a {
