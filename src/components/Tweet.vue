@@ -1,37 +1,31 @@
 <template>
   <div className="tweet">
-    <img 
-      :src="user.image"
-      className="profile"
-      alt="profile"/>
-
+    <profileImage 
+      :imageURL="user.image">
+    </profileImage>
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">{{user.name}}</span>
-          <span className="handle">{{user.handle}}</span>
-        </span>
-
-        <span className="timestamp">{{timestamp}}</span>
+        <user :user="user">
+        </user>
+        <timestamp :timestamp="timestamp">
+        </timestamp>
       </div>
 
-      <p className="message">
-       {{message}}
-      </p>
+    <message :message="message"></message>
+    <actions/>  
 
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+    
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
 <script>
+import profileImage from './ProfileImage.vue';
+import user from './User.vue';
+import timestamp from './Timestamp.vue';
+import message from './Message.vue';
+import actions from './Actions.vue';
 
 export default {
   props: {   
@@ -40,9 +34,10 @@ export default {
       handle: String,
       image: String,
     },
-    timestamp:String,
-    message:String,
-  },  
+      timestamp:String,
+      message:String,
+  },
+  components: {profileImage, user, timestamp,message, actions},
 }
 </script>
 <style scoped>
