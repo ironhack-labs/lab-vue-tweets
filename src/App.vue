@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet :tweet="tweets[0]"/>
   </div>
 </template>
 
@@ -40,7 +40,10 @@ export default {
             },
         ]
     }),
-    components: { Tweet }
+    components: { Tweet },
+    props: {
+      tweet: Object,
+    }
 }
 </script>
 
