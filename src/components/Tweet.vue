@@ -6,8 +6,9 @@
         <span className="user">
           <User :user="user" />
         </span>
-
-        <span className="timestamp">{{ timestamp }}</span>
+        <span className="timestamp">
+          <Timestamp :timestamp="timestamp" />
+        </span>
       </div>
 
       <p className="message">
@@ -29,6 +30,7 @@
 <script>
 import ProfileImage from "./ProfileImage.vue";
 import User from "./User.vue";
+import Timestamp from "./Timestamp.vue";
 export default {
   props: {
     user: {
@@ -39,7 +41,7 @@ export default {
     message: String,
     image: String,
   },
-  components: { ProfileImage, User },
+  components: { ProfileImage, User, Timestamp },
 };
 </script>
 
