@@ -3,7 +3,7 @@
     <Tweet v-for="tweet in tweets" :key="tweet.id"
       :user= "tweet.user"
       :timestamp= "tweet.timestamp"
-      :message= "tweet.message" />
+      :message= "tweet.message"/>
   </div>
 </template>
 
