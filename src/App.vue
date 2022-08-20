@@ -4,7 +4,6 @@
     :user="tweet.user" 
     :timestamp="tweet.timestamp" 
     :message="tweet.message" />
-
   </div>
 </template>
 
