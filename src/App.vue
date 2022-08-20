@@ -1,6 +1,6 @@
 <template>
 	<div class="app">
-		<Tweet :tweet="tweets[0]" />
+		<Tweet :tweet="tweet" v-for="tweet in tweets" :key="tweet.timestamp" />
 	</div>
 </template>
 
@@ -172,4 +172,5 @@ body {
 	justify-content: space-between;
 	color: #536471;
 }
+
 </style>

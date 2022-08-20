@@ -39,4 +39,7 @@ export default {
 a {
 	color: #42b983;
 }
+.tweet {
+	margin-bottom: 10px;
+}
 </style>
