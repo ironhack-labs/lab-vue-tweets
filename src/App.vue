@@ -1,6 +1,12 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet 
+      name="Ironhack"
+      handle="@ironhack"
+      timestamp="Nov 30, 2020"
+      message="On December 7th, we will be hosting a #webinar that will introduce you
+        to #SQL! Are you ready? 🚀"
+    />
   </div>
 </template>
 
