@@ -5,8 +5,7 @@
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">{{ user.name }}</span>
-          <span className="handle">{{ user.handle }}</span>
+          <User :user="user"/>
         </span>
 
         <span className="timestamp">{{timestamp}}</span>
@@ -31,16 +30,19 @@
 
 <script>
 import ProfileImage from './ProfileImage.vue'
+import User from './User.vue'
 
 export default {
   name: 'Tweet',
   components: {
-    ProfileImage
+    ProfileImage,
+    User,
   },
   props: {
     user: {
       name: String,
       handle: String,
+      image: String,
     },
     timestamp: String,
     message: String,
