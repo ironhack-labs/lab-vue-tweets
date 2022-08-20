@@ -1,6 +1,6 @@
 <template>
-  <div class="app">
-    <Tweet />
+  <div class="app" >
+    <Tweet v-for="tweet in tweets" :tweet="tweet" />
   </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
     data: () => ({
         tweets: [
             {
+                id: 1,
                 user: {
                     name: "Thoughts of Dog®",
                     image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -21,6 +22,7 @@ export default {
                 message: "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
             },
             {
+                id: 2,
                 user: {
                     name: "Thoughts of Dog®",
                     image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -30,6 +32,7 @@ export default {
                 message: "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
             },
             {
+                id: 3,
                 user: {
                     name: "Thoughts of Dog®",
                     image: "https://i.imgur.com/b0EdHVV.jpg",
