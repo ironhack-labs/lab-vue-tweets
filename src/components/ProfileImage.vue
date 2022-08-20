@@ -1,11 +1,12 @@
 <template>
-    <img :src="image" className="profile" alt="profile"/>
+  <img :src="image" className="profile" alt="profile" />
 </template>
 
 <script>
 export default {
-    props: {
-        image: String,
-    },
+  name: "ProfileImage",
+  props: {
+    image: String,
+  },
 };
 </script>
