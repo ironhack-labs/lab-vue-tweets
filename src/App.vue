@@ -1,6 +1,10 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet  :user= "tweets[0].user"
+            :timestamp= "tweets[0].timestamp"
+            :message= "tweets[0].message"  
+    >
+    </Tweet >
   </div>
 </template>
 
