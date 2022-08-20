@@ -41,7 +41,7 @@ export default {
     timestamp: String,
     message: String,
     },
-}
+};
 </script>
 
 <style scoped>
