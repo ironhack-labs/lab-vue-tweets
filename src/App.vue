@@ -1,6 +1,10 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet  v-for= "item in tweets"  :key="item.id"
+            :user= "item.user"
+            :timestamp= "item.timestamp"
+            :message= "item.message"  >
+    </Tweet >
   </div>
 </template>
 
@@ -17,6 +21,7 @@ export default {
                     image: "https://i.imgur.com/b0EdHVV.jpg",
                     handle: "dog_feelings",
                 },
+                id: 0,
                 timestamp: "1h ago",
                 message: "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
             },
@@ -26,6 +31,7 @@ export default {
                     image: "https://i.imgur.com/b0EdHVV.jpg",
                     handle: "dog_feelings",
                 },
+                id: 1,
                 timestamp: "2h ago",
                 message: "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
             },
@@ -35,12 +41,13 @@ export default {
                     image: "https://i.imgur.com/b0EdHVV.jpg",
                     handle: "dog_feelings",
                 },
+                id: 2,
                 timestamp: "3h ago",
                 message: "here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
             },
         ]
     }),
-    components: { Tweet }
+    components: { Tweet } // iteration one
 }
 </script>
 
