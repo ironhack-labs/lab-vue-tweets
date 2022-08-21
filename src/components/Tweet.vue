@@ -9,15 +9,15 @@
     <div className="body">
       <div className="top">
         <span className="user">
-          <span className="name">{{ name }}</span>
-          <span className="handle">{{ handle }}</span>
+          <span className="name">{{ tweet.user.name }}</span>
+          <span className="handle">{{ tweet.user.handle }}</span>
         </span>
 
-        <span className="timestamp">{{ timestamp }}</span>
+        <span className="timestamp">{{ tweet.timestamp }}</span>
       </div>
 
       <p className="message">
-        {{ message }}
+        {{ tweet.message }}
       </p>
 
       <div className="actions">
@@ -36,13 +36,12 @@
 <script>
 export default {
 name: 'tweets',
-props: [
-  'name',
-  'handle',
-  'img',
-  'timestamp',
-   'message'
-   ]
+props:{
+    tweet: {
+      required: true,
+      type: Object,
+    },
+}
 };
 </script>
 
