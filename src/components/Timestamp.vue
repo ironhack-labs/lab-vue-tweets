@@ -4,16 +4,8 @@
 
 <script>
 
-import TweetsArray from '../components/TweetsArray.vue';
-
 export default {
-
   name: 'timeStamp',
-  
-  components: {
-    TweetsArray,
-  },
-
   props: {
     timeStamp: {
       required: true,

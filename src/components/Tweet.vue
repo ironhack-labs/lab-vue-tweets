@@ -10,9 +10,7 @@
       <User :userData="tweet.user.name" />
       <timestamp :timeStamp="tweet.timestamp" />
     </div>
-      <p className="message">
-        {{ tweet.message }}
-      </p>
+      <Message :message="tweet.message"/>
 
       <div className="actions">
         <!-- Font Awesome icons -->
@@ -28,14 +26,18 @@
 </template>
 
 <script>
-import Timestamp from './Timestamp.vue';
 
-import User from './User.vue'
+import Timestamp from './Timestamp.vue';
+import User from './User.vue';
+import Message from './Message.vue';
+
+
 export default {
   name: 'tweets',
   components: {
     User,
     Timestamp,
+    Message,
   },
   props:{
     tweet: {
