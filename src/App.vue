@@ -1,6 +1,9 @@
 <template>
   <div class="app">
-    <Tweet v-for="tweet in tweetsArray" :ref="tweetsArray.timestamp" :tweet="tweet"
+    <Tweet 
+      v-for="tweet in tweetsArray" 
+      :key="tweetsArray.timestamp"
+      :tweet="tweet"
     />
   </div>
 </template>
@@ -8,6 +11,7 @@
 <script>
 
 import Tweet from './components/Tweet.vue';
+import TweetsArray from './components/TweetsArray.vue';
 
 export default {
     data: () => ({

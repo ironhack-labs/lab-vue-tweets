@@ -5,17 +5,11 @@
       className="profile"
       alt="profile"
     />
-
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">{{ tweet.user.name }}</span>
-          <span className="handle">{{ tweet.user.handle }}</span>
-        </span>
-
-        <span className="timestamp">{{ tweet.timestamp }}</span>
-      </div>
-
+      <User :userData="tweet.user.name" />
+      <timestamp :timeStamp="tweet.timestamp" />
+    </div>
       <p className="message">
         {{ tweet.message }}
       </p>
@@ -34,14 +28,25 @@
 </template>
 
 <script>
+import Timestamp from './Timestamp.vue';
+
+import User from './User.vue'
 export default {
-name: 'tweets',
-props:{
+  name: 'tweets',
+  components: {
+    User,
+    Timestamp,
+  },
+  props:{
     tweet: {
       required: true,
       type: Object,
     },
-}
+    userData: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
 
