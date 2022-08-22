@@ -11,7 +11,6 @@
 <script>
 
 import Tweet from './components/Tweet.vue';
-import TweetsArray from './components/TweetsArray.vue';
 
 export default {
     data: () => ({
