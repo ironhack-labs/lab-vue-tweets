@@ -1,6 +1,14 @@
 <template>
   <div class="app">
-    <Tweet />
+
+    <Tweet v-for="tweet of tweets" 
+    :key="tweet.id" 
+    :user="tweet.user" 
+    :timestamp="tweet.timestamp" 
+    :message="tweet.message"
+    :icon="icon"
+    @clickLike="changeStatus(icon)"
+    />
   </div>
 </template>
 
@@ -19,6 +27,7 @@ export default {
                 },
                 timestamp: "1h ago",
                 message: "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
+
             },
             {
                 user: {
@@ -40,7 +49,19 @@ export default {
             },
         ]
     }),
-    components: { Tweet }
+    components: { Tweet },
+    props:{
+        icon: {
+          like: Boolean,
+          default: false
+      },
+    },
+    methods: {
+      changeStatus(icon) {
+        icon = !icon;
+      }
+    }
+  
 }
 </script>
 
