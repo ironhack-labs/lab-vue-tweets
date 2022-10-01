@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="tweet in tweets" :key="tweet.timestamp" :tweet="tweet" />
   </div>
 </template>
 
@@ -120,15 +120,15 @@ export default {
     line-height: 1.4rem;
   }
 
+  .profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
   .more {
     margin-left: 20px;
-  }
-
-  .profile {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    margin-right: 10px;
   }
 
   .name {
