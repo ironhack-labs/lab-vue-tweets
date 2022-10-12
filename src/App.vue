@@ -1,16 +1,20 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet 
+      v-for="tweet in tweetsArray" 
+      :key="tweetsArray.timestamp"
+      :tweet="tweet"
+    />
   </div>
 </template>
-
+ 
 <script>
 
 import Tweet from './components/Tweet.vue';
 
 export default {
     data: () => ({
-        tweets: [
+        tweetsArray: [
             {
                 user: {
                     name: "Thoughts of Dog®",
@@ -98,7 +102,7 @@ export default {
   }
 
   .tweet {
-    margin: 0 auto;
+    margin: 20px auto;
     min-width: 480px;
     max-width: 640px;
     min-height: 80px;
